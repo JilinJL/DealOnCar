@@ -50,6 +50,7 @@
     "@tarojs/runtime": "3.6.1",
     "@tarojs/shared": "3.6.1",
     "@tarojs/taro": "3.6.1",
+    "miniprogram-api-typings": "^2.4.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },

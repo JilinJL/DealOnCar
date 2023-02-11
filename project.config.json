@@ -4,7 +4,7 @@
     "description": "随车买",
     "appid": "wxd3fe8848ddb8e4f3",
     "setting": {
-        "urlCheck": true,
+        "urlCheck": false,
         "es6": false,
         "enhance": false,
         "postcss": false,

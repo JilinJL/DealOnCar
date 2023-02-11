@@ -1,0 +1,10 @@
+.swiperView {
+  height: 450px;
+}
+.swiperView .indexswiper {
+  width: 100%;
+  height: 450px;
+}
+.swiperView .indexswiper SwiperItem {
+  height: 450px;
+}

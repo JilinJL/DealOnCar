@@ -1,25 +1,37 @@
-import { Component } from 'react'
-import { View, Text } from '@tarojs/components'
-import { AtButton } from 'taro-ui'
+import Taro from '@tarojs/taro'
+import React,{Component} from 'react'
+import {Image, View, Text } from '@tarojs/components'
+import { AtButton,AtTabBar } from 'taro-ui'
+
+import { Swiper, SwiperItem } from '@tarojs/components'
+
+import IndexSwiper from './indexswiper';
+import GoodsList from './goodslist'
 import './index.less'
+
 
 export default class Index extends Component {
 
-  componentWillMount () { }
+  componentWillMount() { }
 
-  componentDidMount () { }
+  componentDidMount() { }
 
-  componentWillUnmount () { }
+  componentWillUnmount() { }
 
-  componentDidShow () { }
+  componentDidShow() { }
 
-  componentDidHide () { }
+  componentDidHide() { }
 
-  render () {
+  render() {
     return (
       <View className='index'>
-        <Text>Hello world!</Text>
-        <AtButton>点击</AtButton>
+          <IndexSwiper></IndexSwiper>
+          <View style={"background-color: #B2EBF2;height: 50rem"}>
+          <GoodsList></GoodsList>
+    
+
+
+          </View>
       </View>
     )
   }

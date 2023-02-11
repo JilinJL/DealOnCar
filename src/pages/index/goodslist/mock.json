@@ -1,0 +1,116 @@
+{
+  "goodsData": [
+    {
+      "id": 1,
+      "name": "怡宝",
+      "imgUrl": "https://tse2-mm.cn.bing.net/th/id/OIP-C.dzBqXE7wng457FmMR20SuwHaHa?pid=ImgDet&rs=1",
+      "price": 2,
+      "type": 1
+    },
+    {
+      "id": 2,
+      "name": "绿箭口香糖",
+      "imgUrl": "https://tse2-mm.cn.bing.net/th/id/OIP-C.dzBqXE7wng457FmMR20SuwHaHa?pid=ImgDet&rs=1",
+      "price": 2,
+      "type": 2
+    },
+    {
+      "id": 4,
+      "name": "士力架",
+      "imgUrl": "https://tse2-mm.cn.bing.net/th/id/OIP-C.dzBqXE7wng457FmMR20SuwHaHa?pid=ImgDet&rs=1",
+      "price": 4,
+      "type": 2
+    },
+    {
+      "id": 17,
+      "name": "湿巾纸",
+      "imgUrl": "https://tse2-mm.cn.bing.net/th/id/OIP-C.dzBqXE7wng457FmMR20SuwHaHa?pid=ImgDet&rs=1",
+      "price": 2,
+      "type": 4
+    },
+    {
+      "id": 1,
+      "name": "怡宝",
+      "imgUrl": "https://tse2-mm.cn.bing.net/th/id/OIP-C.dzBqXE7wng457FmMR20SuwHaHa?pid=ImgDet&rs=1",
+      "price": 2,
+      "type": 1
+    },
+    {
+      "id": 2,
+      "name": "绿箭口香糖",
+      "imgUrl": "https://tse2-mm.cn.bing.net/th/id/OIP-C.dzBqXE7wng457FmMR20SuwHaHa?pid=ImgDet&rs=1",
+      "price": 2,
+      "type": 2
+    },
+    {
+      "id": 4,
+      "name": "士力架",
+      "imgUrl": "https://tse2-mm.cn.bing.net/th/id/OIP-C.dzBqXE7wng457FmMR20SuwHaHa?pid=ImgDet&rs=1",
+      "price": 4,
+      "type": 2
+    },
+    {
+      "id": 17,
+      "name": "湿巾纸",
+      "imgUrl": "https://tse2-mm.cn.bing.net/th/id/OIP-C.dzBqXE7wng457FmMR20SuwHaHa?pid=ImgDet&rs=1",
+      "price": 2,
+      "type": 4
+    },
+    {
+      "id": 1,
+      "name": "怡宝",
+      "imgUrl": "https://tse2-mm.cn.bing.net/th/id/OIP-C.dzBqXE7wng457FmMR20SuwHaHa?pid=ImgDet&rs=1",
+      "price": 2,
+      "type": 1
+    },
+    {
+      "id": 2,
+      "name": "绿箭口香糖",
+      "imgUrl": "https://tse2-mm.cn.bing.net/th/id/OIP-C.dzBqXE7wng457FmMR20SuwHaHa?pid=ImgDet&rs=1",
+      "price": 2,
+      "type": 2
+    },
+    {
+      "id": 4,
+      "name": "士力架",
+      "imgUrl": "https://tse2-mm.cn.bing.net/th/id/OIP-C.dzBqXE7wng457FmMR20SuwHaHa?pid=ImgDet&rs=1",
+      "price": 4,
+      "type": 2
+    },
+    {
+      "id": 17,
+      "name": "湿巾纸",
+      "imgUrl": "https://tse2-mm.cn.bing.net/th/id/OIP-C.dzBqXE7wng457FmMR20SuwHaHa?pid=ImgDet&rs=1",
+      "price": 2,
+      "type": 4
+    },
+    {
+      "id": 1,
+      "name": "怡宝",
+      "imgUrl": "https://tse2-mm.cn.bing.net/th/id/OIP-C.dzBqXE7wng457FmMR20SuwHaHa?pid=ImgDet&rs=1",
+      "price": 2,
+      "type": 1
+    },
+    {
+      "id": 2,
+      "name": "绿箭口香糖",
+      "imgUrl": "https://tse2-mm.cn.bing.net/th/id/OIP-C.dzBqXE7wng457FmMR20SuwHaHa?pid=ImgDet&rs=1",
+      "price": 2,
+      "type": 2
+    },
+    {
+      "id": 4,
+      "name": "士力架",
+      "imgUrl": "https://tse2-mm.cn.bing.net/th/id/OIP-C.dzBqXE7wng457FmMR20SuwHaHa?pid=ImgDet&rs=1",
+      "price": 4,
+      "type": 2
+    },
+    {
+      "id": 17,
+      "name": "湿巾纸",
+      "imgUrl": "https://tse2-mm.cn.bing.net/th/id/OIP-C.dzBqXE7wng457FmMR20SuwHaHa?pid=ImgDet&rs=1",
+      "price": 2,
+      "type": 4
+    }
+  ]
+}
