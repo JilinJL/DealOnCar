@@ -1,0 +1,9 @@
+{
+  "miniprogramRoot": "./",
+  "projectname": "DealOnCar",
+  "appid": "testAppId",
+  "setting": {
+    "es6": false,
+    "minified": false
+  }
+}
