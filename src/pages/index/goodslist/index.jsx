@@ -30,7 +30,7 @@ export default class GoodsList extends Component {
         this.goodsRequest = Taro.request({
             method: 'post',
             url: 'http://localhost:7676/api/passenger/product/list',
-            params:
+            data:
             {
                 "currentPage": 1,
                 "pageSize": 5,
