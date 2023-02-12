@@ -18,11 +18,11 @@ export default class GoodsList extends Component {
     }
 
     //跳转到详情
-    gotoDetails(id){
-        Taro.navigateTo({
-            url: 'details'
-        })
-    }
+    // gotoDetails(id){
+    //     Taro.navigateTo({
+    //         url: 'details'
+    //     })
+    // }
 
     componentDidMount() {
         this.goodsRequest = Taro.request({
