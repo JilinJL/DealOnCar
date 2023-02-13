@@ -2,14 +2,11 @@ page {
   width: 750rpx;
   background-image: url(https://gitee.com/jilinJL/my-pictures/raw/master/img/202302131016767.png);
 }
-
 .index {
   display: flex;
   flex-direction: column;
   height: 100vh;
-
-  //设置headerbox位置
-  .headerbox{
-    margin-top: 40rpx;
-  }
+}
+.index .headerbox {
+  margin-top: 40rpx;
 }

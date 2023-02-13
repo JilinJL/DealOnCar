@@ -12,6 +12,7 @@ export default defineAppConfig({
     navigationBarTextStyle: 'black'
   },
   tabBar:{
+    "color": "#A5AAA3",
     "list": [{
       "pagePath": "pages/index/index",
       "text": "首页",

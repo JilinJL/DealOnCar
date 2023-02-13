@@ -18,7 +18,7 @@ export default class IndexSwiper extends Component{
                     indicatorColor='#999'
                     indicatorActiveColor='#333'
                     circular
-                    indicatorDots
+                    indicatorDots='true'
                     autoplay>
                     <SwiperItem>
                         <View className='swiper-img'><Image mode='heightFix' src={img1} /></View>

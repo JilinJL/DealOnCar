@@ -3,6 +3,7 @@ import Taro from '@tarojs/taro'
 import { Component } from 'react'
 import { Image, View, Text } from '@tarojs/components'
 import { AtList, AtListItem } from 'taro-ui'
+
 import './index.less'
 
 export default class GoodsList extends Component {
@@ -17,7 +18,6 @@ export default class GoodsList extends Component {
         console.log(dataArr)
     }
 
-    //跳转到详情
     // gotoDetails(id){
     //     Taro.navigateTo({
     //         url: 'details'
@@ -28,8 +28,8 @@ export default class GoodsList extends Component {
 
         //获取商品列表
         this.goodsRequest = Taro.request({
-            method: 'post',
-            url: 'http://localhost:7676/api/passenger/product/list',
+            method: 'get',
+            url: 'http://localhost:3000/goodsData',
             data:
             {
                 "currentPage": 1,

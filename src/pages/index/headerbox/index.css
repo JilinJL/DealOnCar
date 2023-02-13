@@ -1,0 +1,29 @@
+.headerbox {
+  bottom: 10vh;
+  width: 750rpx;
+  display: flex;
+  justify-content: center;
+}
+.headerbox .mainbox {
+  padding: 40rpx;
+  background-color: #fff;
+  width: 600rpx;
+  height: 600rpx;
+  border-radius: 30rpx;
+  box-shadow: 0 2rpx 30rpx rgba(0, 0, 0, 0.5);
+  font-family: 'PingFang SC';
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  background-image: url(https://gitee.com/jilinJL/my-pictures/raw/master/img/202302131151990.png);
+}
+.headerbox .mainbox .goshopping {
+  position: relative;
+  top: 4rem;
+  height: 80rpx;
+  width: 200rpx;
+  border: 4rpx groove #666;
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 80rpx;
+}

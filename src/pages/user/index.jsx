@@ -3,7 +3,7 @@ import { View, Text } from '@tarojs/components'
 import { AtButton } from 'taro-ui'
 import './index.less'
 
-export default class Index extends Component {
+export default class User extends Component {
 
   componentWillMount() { }
 

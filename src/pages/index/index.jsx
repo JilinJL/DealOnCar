@@ -6,7 +6,9 @@ import { AtButton,AtTabBar } from 'taro-ui'
 import { Swiper, SwiperItem } from '@tarojs/components'
 
 import IndexSwiper from './indexswiper';
-import GoodsList from './goodslist'
+import DiscountBox from './discountbox';
+import HeaderBox from './headerbox';
+
 import './index.less'
 
 
@@ -25,13 +27,15 @@ export default class Index extends Component {
   render() {
     return (
       <View className='index'>
+
+          {/* 顶部轮播图 */}
           <IndexSwiper></IndexSwiper>
-          <View style={"background-color: #B2EBF2;height: 50rem"}>
-          <GoodsList></GoodsList>
-    
+          {/* 登录信息+优惠券卡片 */}
+          <DiscountBox></DiscountBox>
+          {/* 设备编号以及购物入口 */}
+          <HeaderBox className='headerbox'></HeaderBox>
 
-
-          </View>
+          
       </View>
     )
   }

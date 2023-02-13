@@ -1,1 +1,116 @@
-.swiperView{height:450rpx}.swiperView .indexswiper{height:450rpx;width:100%}.swiperView .indexswiper SwiperItem{height:450rpx}
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].oneOf[0].use[2]!./node_modules/less-loader/dist/cjs.js!./src/pages/index/indexswiper/index.less ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
+.swiperView {
+  height: 480rpx;
+  width: 100%;
+}
+.swiperView .indexswiper {
+  width: 100%;
+  height: 100%;
+}
+.swiperView .indexswiper SwiperItem {
+  height: 100%;
+  width: 100%;
+}
+
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].oneOf[0].use[2]!./node_modules/less-loader/dist/cjs.js!./src/pages/index/discountbox/index.less ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
+.discountbox {
+  position: relative;
+  width: 750rpx;
+  height: 160rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.discountbox .mainbox {
+  padding: 40rpx;
+  position: absolute;
+  top: -20rpx;
+  background-color: #fff;
+  width: 600rpx;
+  height: 100rpx;
+  border-radius: 30rpx;
+  -webkit-box-shadow: 0 2rpx 30rpx rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2rpx 30rpx rgba(0, 0, 0, 0.5);
+  font-family: 'PingFang SC';
+  color: #838383;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.discountbox .mainbox .rightView View {
+  text-align: justify;
+  line-height: 1.5rem;
+}
+
+/*!***************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].oneOf[0].use[2]!./node_modules/less-loader/dist/cjs.js!./src/pages/index/headerbox/index.less ***!
+  \***************************************************************************************************************************************************************************************************************************************************/
+.headerbox {
+  bottom: 10vh;
+  width: 750rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.headerbox .mainbox {
+  padding: 40rpx;
+  background-color: #fff;
+  width: 600rpx;
+  height: 600rpx;
+  border-radius: 30rpx;
+  -webkit-box-shadow: 0 2rpx 30rpx rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2rpx 30rpx rgba(0, 0, 0, 0.5);
+  font-family: 'PingFang SC';
+  font-weight: 700;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-image: url(https://gitee.com/jilinJL/my-pictures/raw/master/img/202302131151990.png);
+}
+.headerbox .mainbox .goshopping {
+  position: relative;
+  top: 4rem;
+  height: 80rpx;
+  width: 200rpx;
+  border: 4rpx groove #666;
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+/*!*****************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].oneOf[0].use[2]!./node_modules/less-loader/dist/cjs.js!./src/pages/index/index.less ***!
+  \*****************************************************************************************************************************************************************************************************************************************/
+page {
+  width: 750rpx;
+  background-image: url(https://gitee.com/jilinJL/my-pictures/raw/master/img/202302131016767.png);
+}
+.index {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+}
+.index .headerbox {
+  margin-top: 40rpx;
+}
+

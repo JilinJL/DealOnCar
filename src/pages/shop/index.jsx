@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { View, Text } from '@tarojs/components'
 import { AtButton } from 'taro-ui'
+import GoodsList from '../shop/goodslist'
+
 import './index.less'
 
 export default class Shop extends Component {
@@ -18,8 +20,11 @@ export default class Shop extends Component {
   render() {
     return (
       <View className='index'>
-        <Text>Hello world!</Text>
-        <AtButton>点击</AtButton>
+      {/*TODO:  BoxHeader*/}
+      
+      {/*TODO:  ShopCart*/}
+
+        <GoodsList></GoodsList>
 
       </View>
     )
