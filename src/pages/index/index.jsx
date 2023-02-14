@@ -8,6 +8,7 @@ import { Swiper, SwiperItem } from '@tarojs/components'
 import IndexSwiper from './indexswiper';
 import DiscountBox from './discountbox';
 import HeaderBox from './headerbox';
+import Login from './login'
 
 import './index.less'
 
@@ -16,13 +17,18 @@ export default class Index extends Component {
 
   componentWillMount() { }
 
-  componentDidMount() { }
+  componentDidMount() {
+    // showLogin();
+   }
 
   componentWillUnmount() { }
 
   componentDidShow() { }
 
   componentDidHide() { }
+
+  //登陆
+
 
   render() {
     return (
@@ -34,7 +40,6 @@ export default class Index extends Component {
           <DiscountBox></DiscountBox>
           {/* 设备编号以及购物入口 */}
           <HeaderBox className='headerbox'></HeaderBox>
-
           
       </View>
     )

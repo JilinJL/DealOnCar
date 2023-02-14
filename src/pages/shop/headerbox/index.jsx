@@ -11,23 +11,12 @@ export default class HeaderBox extends Component {
         }
     }
 
-    //跳转购物页面
-    goshopping(){
-        Taro.switchTab({
-            url: '../../pages/shop/index'
-          })
-    }
 
     render() {
         return (
             <View className='headerbox'>
                 <View className='mainbox'>
-                    <View className='machinebox'>
-                        当前设备编号:{this.state.machineId}
-                    </View>
-                    <View class='goshopping' onClick={this.goshopping}>
-                        开始选购
-                    </View>
+                    <Text>欢迎光临~</Text>
                 </View>
 
             </View>

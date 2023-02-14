@@ -31,7 +31,7 @@
 .discountbox .mainbox {
   padding: 40rpx;
   position: absolute;
-  top: -20rpx;
+  top: -30rpx;
   background-color: #fff;
   width: 600rpx;
   height: 100rpx;
@@ -85,7 +85,7 @@
 }
 .headerbox .mainbox .goshopping {
   position: relative;
-  top: 4rem;
+  top: 3rem;
   height: 80rpx;
   width: 200rpx;
   border: 4rpx groove #666;

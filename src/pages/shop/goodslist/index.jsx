@@ -18,6 +18,11 @@ export default class GoodsList extends Component {
         console.log(dataArr)
     }
 
+
+    //分类数据
+
+
+    
     // gotoDetails(id){
     //     Taro.navigateTo({
     //         url: 'details'
@@ -30,13 +35,13 @@ export default class GoodsList extends Component {
         this.goodsRequest = Taro.request({
             method: 'get',
             url: 'http://localhost:3000/goodsData',
-            data:
-            {
-                "currentPage": 1,
-                "pageSize": 5,
-                "vehicleId": 1,
-                "queryString": "绿箭"
-            },
+            // data:
+            // {
+            //     "currentPage": 1,
+            //     "pageSize": 5,
+            //     "vehicleId": 1,
+            //     "queryString": "绿箭"
+            // },
 
             success: (res) => {
                 this.setState({ goods: [...res.data] })
@@ -63,8 +68,8 @@ export default class GoodsList extends Component {
                         this.state.goods.map((good, index) => {
                             return (
                                 <AtListItem
-                                    onClick={this.gotoDetails(good.id)}
-                                    extraText={good.price}
+                                   /* onClick={this.gotoDetails(good.id)}*/
+                                    extraText={'￥'+good.price}
                                     title={good.name}
                                     thumb={good.imgUrl}
                                 />
