@@ -1,0 +1,16 @@
+.good-item {
+  display: inline-block;
+  margin: auto;
+  padding: 10rpx;
+  width: 45vw;
+  height: auto;
+  border: 2rpx solid #666;
+}
+.good-item .good-img {
+  width: 100%;
+  height: auto;
+}
+.good-item .price {
+  display: flex;
+  justify-content: space-between;
+}

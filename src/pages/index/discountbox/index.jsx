@@ -17,8 +17,8 @@ export default class DiscountBox extends Component {
         }
     }
 
-    showLogin=()=>{
-        this.setState({ isLogin: true })
+    showLogin=(islogin)=>{
+        this.setState({ isLogin: islogin })
     }
 
     render() {
@@ -27,7 +27,7 @@ export default class DiscountBox extends Component {
                 <View className="mainbox">
 
                     {this.state.isLogin ? <View>用户头像<View>用户名</View></View> 
-                    : <Login></Login>}
+                    : <Login setIsLogin={this.showLogin}></Login>}
                     <View className='rightView'>            
                     <View>优惠券: {this.state.discount}</View>
                     <View>积分: {this.state.credits}</View>

@@ -4,13 +4,18 @@ import { Component } from 'react'
 import { Image, View, Text } from '@tarojs/components'
 import { AtList, AtListItem } from 'taro-ui'
 
+
+import GoodItem from '../gooditem'
 import './index.less'
 
 export default class GoodsList extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { goods: [] }; //存储商品
+        this.state = { 
+            goods: [],  //存储商品
+            goodstype: ''
+        }; 
     }
 
     //处理请求的数据
@@ -22,12 +27,10 @@ export default class GoodsList extends Component {
     //分类数据
 
 
-    
-    // gotoDetails(id){
-    //     Taro.navigateTo({
-    //         url: 'details'
-    //     })
-    // }
+    // 商品详情
+    gotoDetails(id){
+      console.log(id)
+    }
 
     componentDidMount() {
 
@@ -60,25 +63,26 @@ export default class GoodsList extends Component {
 
     render() {
         return (
-            <View className='goodsList'>
-                <AtList
-                    hasBorder
-                >
+            <View className='goods-list'>
                     {
                         this.state.goods.map((good, index) => {
                             return (
-                                <AtListItem
-                                   /* onClick={this.gotoDetails(good.id)}*/
-                                    extraText={'￥'+good.price}
-                                    title={good.name}
-                                    thumb={good.imgUrl}
-                                />
+                                // <GoodItem
+                                //     onClick={()=>this.gotoDetails(good.id)}
+                                //     extraText={'￥'+good.price}
+                                //     title={good.name}
+                                //     thumb={good.imgUrl}
+                                // />
+                                <GoodItem
+                                name={good.name}
+                                price={good.price}
+                                key={good.id}
+                                onClick={()=>this.gotoDetails(good.id)}
+                                ></GoodItem>
                             )
                         })
 
                     }
-
-                </AtList>
             </View>
         )
     }

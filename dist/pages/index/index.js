@@ -129,9 +129,9 @@ var DiscountBox = /*#__PURE__*/function (_Component) {
     var _this;
     (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_6__["default"])(this, DiscountBox);
     _this = _super.call(this, props);
-    (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_7__["default"])((0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_8__["default"])(_this), "showLogin", function () {
+    (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_7__["default"])((0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_8__["default"])(_this), "showLogin", function (islogin) {
       _this.setState({
-        isLogin: true
+        isLogin: islogin
       });
     });
     _this.state = {
@@ -152,7 +152,9 @@ var DiscountBox = /*#__PURE__*/function (_Component) {
             children: ["\u7528\u6237\u5934\u50CF", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_tarojs_components__WEBPACK_IMPORTED_MODULE_10__.View, {
               children: "\u7528\u6237\u540D"
             })]
-          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_login__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_tarojs_components__WEBPACK_IMPORTED_MODULE_10__.View, {
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_login__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            setIsLogin: this.showLogin
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_tarojs_components__WEBPACK_IMPORTED_MODULE_10__.View, {
             className: "rightView",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_tarojs_components__WEBPACK_IMPORTED_MODULE_10__.View, {
               children: ["\u4F18\u60E0\u5238: ", this.state.discount]
@@ -388,20 +390,31 @@ var IndexSwiper = /*#__PURE__*/function (_Component) {
 
 
 
-function Login() {
+function Login(props) {
   var login = function login() {
     _tarojs_taro__WEBPACK_IMPORTED_MODULE_1___default().login({
       success: function success(res) {
+        wx.showLoading({
+          title: '稍等..'
+        });
         if (res.code) {
           _tarojs_taro__WEBPACK_IMPORTED_MODULE_1___default().request({
-            url: 'http://localhost:7677/api/sso/login/userLogin',
-            // 后端调用小程序api的地址
+            url: 'http://localhost:3000/goodsData',
+            // 后端调用小程序api的地址 http://localhost:7677/api/sso/login/userLogin
             data: {
               js_code: res.code
             },
             success: function success(res) {
-              // 首次登陆需要授权
-              console.log(res.data);
+              wx.hideLoading();
+              props.setIsLogin(true);
+              console.log(res.openid);
+            },
+            fail: function fail(err) {
+              _tarojs_taro__WEBPACK_IMPORTED_MODULE_1___default().showToast({
+                title: '加载失败',
+                icon: 'error',
+                duration: 2000
+              });
             }
           });
         }
