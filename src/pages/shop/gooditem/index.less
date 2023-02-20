@@ -1,17 +1,29 @@
 @card-width: 45vw;
-
+@font_color: #555;
 .good-item{
-    display: inline-block;
-    margin: auto;
+    display: grid;
+    margin: 10rpx auto;
     padding: 10rpx;
     width: @card-width;
-    height: auto;
+    height: min-content;
     border: 2rpx solid #666;
+    break-inside: avoid;
+    border-radius: 10rpx;
+    color: @font_color;
+    background-color: #fff;
+
+    //物品剩余量
+    .good-surplus{
+        font-size: 20rpx;
+    }
+    .good-surplus::after{
+        content: "个"
+    }
 
     //物品图片
     .good-img{
-        width: 100%;
-        height: auto;
+        width: auto;
+        height: 240rpx;
     }
 
     .price{

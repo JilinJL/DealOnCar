@@ -1,9 +1,9 @@
 export default defineAppConfig({
   pages: [
-    'pages/index/index',
     'pages/shop/index',
+    'pages/index/index',
     'pages/user/index',
-    'pages/shop/details'
+    'pages/pay/index'
   ],
   window: {
     backgroundTextStyle: 'light',
@@ -13,7 +13,7 @@ export default defineAppConfig({
     navigationBarTextStyle: 'black'
   },
   tabBar:{
-    "color": "#A5AAA3",
+    "color": "#666",
     "list": [{
       "pagePath": "pages/index/index",
       "text": "首页",

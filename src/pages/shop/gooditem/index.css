@@ -1,14 +1,24 @@
 .good-item {
-  display: inline-block;
-  margin: auto;
+  display: grid;
+  margin: 10rpx auto;
   padding: 10rpx;
   width: 45vw;
-  height: auto;
+  height: min-content;
   border: 2rpx solid #666;
+  break-inside: avoid;
+  border-radius: 10rpx;
+  color: #555;
+  background-color: #fff;
+}
+.good-item .good-surplus {
+  font-size: 20rpx;
+}
+.good-item .good-surplus::after {
+  content: "个";
 }
 .good-item .good-img {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 240rpx;
 }
 .good-item .price {
   display: flex;

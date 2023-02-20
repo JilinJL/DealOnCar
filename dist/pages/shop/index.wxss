@@ -2,16 +2,30 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].oneOf[0].use[2]!./node_modules/less-loader/dist/cjs.js!./src/pages/shop/gooditem/index.less ***!
   \*************************************************************************************************************************************************************************************************************************************************/
 .good-item {
-  display: inline-block;
-  margin: auto;
+  display: grid;
+  margin: 10rpx auto;
   padding: 10rpx;
   width: 45vw;
-  height: auto;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
   border: 2rpx solid #666;
+  -webkit-column-break-inside: avoid;
+     -moz-column-break-inside: avoid;
+          break-inside: avoid;
+  border-radius: 10rpx;
+  color: #555;
+  background-color: #fff;
+}
+.good-item .good-surplus {
+  font-size: 20rpx;
+}
+.good-item .good-surplus::after {
+  content: "个";
 }
 .good-item .good-img {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 240rpx;
 }
 .good-item .price {
   display: -webkit-flex;
@@ -26,43 +40,89 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].oneOf[0].use[2]!./node_modules/less-loader/dist/cjs.js!./src/pages/shop/goodslist/index.less ***!
   \**************************************************************************************************************************************************************************************************************************************************/
 .goods-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-row-gap: 20rpx;
+  -webkit-column-count: 2;
+     -moz-column-count: 2;
+          column-count: 2;
+  -webkit-column-gap: 4rpx;
+     -moz-column-gap: 4rpx;
+          column-gap: 4rpx;
+  margin-bottom: 100rpx;
 }
 
-/*!**************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].oneOf[0].use[2]!./node_modules/less-loader/dist/cjs.js!./src/pages/shop/headerbox/index.less ***!
-  \**************************************************************************************************************************************************************************************************************************************************/
-.headerbox {
-  bottom: 10vh;
-  width: 750rpx;
+/*!*************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].oneOf[0].use[2]!./node_modules/less-loader/dist/cjs.js!./src/pages/shop/shopcart/index.less ***!
+  \*************************************************************************************************************************************************************************************************************************************************/
+.shop-cart {
+  width: 100%;
+  height: 100rpx;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-grow: 1 1 2;
+      -ms-flex-positive: 1 1 2;
+          flex-grow: 1 1 2;
+  background-color: rgba(224, 223, 224);
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30rpx;
+}
+.shop-cart .shop-cart-icon {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.shop-cart .shop-cart-icon .badge {
+  position: absolute;
+  left: 120rpx;
+}
+.shop-cart .shop-cart-icon Image {
+  position: relative;
+  width: 100rpx;
+  height: 100rpx;
+  left: 3vw;
+}
+.shop-cart .shop-cart-total {
+  color: #555;
+  -webkit-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+}
+.shop-cart .shop-cart-total:before {
+  content: "￥";
+  display: inline-block;
+  font-size: 20rpx;
+}
+.shop-cart .shop-cart-toPay {
+  margin-right: 20rpx;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  right: 10rpx;
+  -webkit-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  background-color: #5490c9;
+  height: 80%;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-.headerbox .mainbox {
-  padding: 40rpx;
-  background-color: #fff;
-  width: 100%;
-  height: 60rpx;
-  -webkit-box-shadow: 0 2rpx 30rpx rgba(0, 0, 0, 0.5);
-          box-shadow: 0 2rpx 30rpx rgba(0, 0, 0, 0.5);
-  font-family: 'PingFang SC';
-  font-weight: 700;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background-image: url(https://gitee.com/jilinJL/my-pictures/raw/master/img/202302131151990.png);
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 40rpx;
+  color: #fff;
+  letter-spacing: 2rpx;
 }
 
 /*!****************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].oneOf[0].use[2]!./node_modules/less-loader/dist/cjs.js!./src/pages/shop/index.less ***!
   \****************************************************************************************************************************************************************************************************************************************/
+.index {
+  background-color: rgba(224, 223, 224, 0.76);
+}
+.index .shop-cart {
+  position: fixed;
+  bottom: 0;
+}
 

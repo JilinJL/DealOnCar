@@ -14,7 +14,6 @@ export default class GoodsList extends Component {
         super(props);
         this.state = { 
             goods: [],  //存储商品
-            goodstype: ''
         }; 
     }
 
@@ -67,22 +66,19 @@ export default class GoodsList extends Component {
                     {
                         this.state.goods.map((good, index) => {
                             return (
-                                // <GoodItem
-                                //     onClick={()=>this.gotoDetails(good.id)}
-                                //     extraText={'￥'+good.price}
-                                //     title={good.name}
-                                //     thumb={good.imgUrl}
-                                // />
                                 <GoodItem
+                                imgSrc={good.imgUrl}
                                 name={good.name}
                                 price={good.price}
                                 key={good.id}
+                                surplus={good.surplus}
                                 onClick={()=>this.gotoDetails(good.id)}
                                 ></GoodItem>
                             )
                         })
 
                     }
+                    <Text>没有更多了..</Text>
             </View>
         )
     }
