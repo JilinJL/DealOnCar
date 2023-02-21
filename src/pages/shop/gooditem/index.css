@@ -24,3 +24,8 @@
   display: flex;
   justify-content: space-between;
 }
+.good-item .price .at-icon-shopping-cart {
+  padding: 10rpx;
+  background-color: #6098e283;
+  border-radius: 10%;
+}

@@ -1,7 +1,10 @@
-.index {
+page {
+  background-color: rgba(224, 223, 224);
+}
+page .index {
   background-color: rgba(224, 223, 224, 0.76);
 }
-.index .shop-cart {
+page .index .shop-cart {
   position: fixed;
   bottom: 0;
 }

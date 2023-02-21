@@ -3,14 +3,16 @@ export default defineAppConfig({
     'pages/shop/index',
     'pages/index/index',
     'pages/user/index',
-    'pages/pay/index'
+    'pages/pay/index',
+    'pages/orderlist/index'
   ],
   window: {
     backgroundTextStyle: 'light',
     backgroundColor: '#000',
     navigationBarBackgroundColor: '#fff',
     navigationBarTitleText: '随车买',
-    navigationBarTextStyle: 'black'
+    navigationBarTextStyle: 'black',
+    enablePullDownRefresh: true,
   },
   tabBar:{
     "color": "#666",

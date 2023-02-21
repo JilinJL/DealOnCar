@@ -28,7 +28,7 @@ export default function GoodItem(props) {
         <View className="price">
         <Text>￥ {obj.price}</Text>
         <Text className="good-surplus">剩余:{obj.surplus}</Text>
-        <View className='at-icon at-icon-shopping-cart' size="20" color='#666'></View>
+        <View onClick={props.addToCart} className='at-icon at-icon-shopping-cart' size="20" color='#666'></View>
         </View>
     </View>
   )
