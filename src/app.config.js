@@ -8,11 +8,11 @@ export default defineAppConfig({
   ],
   window: {
     backgroundTextStyle: 'light',
-    backgroundColor: '#000',
+    backgroundColor: '#ddd',
     navigationBarBackgroundColor: '#fff',
     navigationBarTitleText: '随车买',
     navigationBarTextStyle: 'black',
-    enablePullDownRefresh: true,
+    enablePullDownRefresh: true
   },
   tabBar:{
     "color": "#666",

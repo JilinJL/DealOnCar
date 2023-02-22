@@ -49,30 +49,26 @@ var Shop = /*#__PURE__*/function (_Component) {
     var _this;
     (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_8__["default"])(this, Shop);
     _this = _super.call(this, props);
-    (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_9__["default"])((0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "saveCart", function (arr) {
+    (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_9__["default"])((0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "saveItemToCart", function (item) {
       _this.setState({
-        goodsInCart: arr
+        itemToCart: item
       });
     });
     _this.state = {
-      goodsInCart: []
+      itemToCart: {}
     };
     return _this;
   }
+
+  //下拉刷新
   (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_11__["default"])(Shop, [{
-    key: "componentWillMount",
-    value: function componentWillMount() {}
-  }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {}
-  }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {}
-  }, {
     key: "onPullDownRefresh",
     value: function onPullDownRefresh() {
       this.forceUpdate();
+      _tarojs_taro__WEBPACK_IMPORTED_MODULE_1___default().stopPullDownRefresh();
     }
+
+    // 拿到要加入购物车的item
   }, {
     key: "render",
     value: function render() {
@@ -82,9 +78,10 @@ var Shop = /*#__PURE__*/function (_Component) {
           marquee: true,
           children: "\u5F53\u524D\u8BBE\u5907ID: 20230221 \u6D4B\u8BD5\u7248\u672C\u4E0D\u4EE3\u8868\u6700\u7EC8\u6548\u679C"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shop_goodslist__WEBPACK_IMPORTED_MODULE_3__["default"], {
-          saveGoodsInCart: this.saveCart
+          saveItemToCart: this.saveItemToCart,
+          addToCart: this.addToCart
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopcart__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          goodsInCart: this.state.goodsInCart,
+          itemToCart: this.state.itemToCart,
           className: "shop-cart"
         })]
       });
@@ -140,12 +137,26 @@ function GoodItem(props) {
       imgSrc: props.imgSrc
     });
   };
+
+  // 商品详情
+  var gotoDetails = function gotoDetails(id) {
+    console.log(obj);
+  };
+
+  //添加到购物车
+  var addToCart = function addToCart(item) {
+    //移交给父组件
+    props.saveItemToCart(item);
+  };
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     getItemInfo();
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__.View, {
     className: "good-item",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__.Image, {
+      onClick: function onClick() {
+        return gotoDetails(obj.id);
+      },
       mode: "scaleToFill",
       className: "good-img",
       alt: "\u52A0\u8F7D\u5931\u8D25..",
@@ -160,7 +171,9 @@ function GoodItem(props) {
         className: "good-surplus",
         children: ["\u5269\u4F59:", obj.surplus]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__.View, {
-        onClick: props.addToCart,
+        onClick: function onClick() {
+          return addToCart(obj);
+        },
         className: "at-icon at-icon-shopping-cart",
         size: "20",
         color: "#666"
@@ -220,38 +233,11 @@ var GoodsList = /*#__PURE__*/function (_Component) {
     var _this;
     (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_7__["default"])(this, GoodsList);
     _this = _super.call(this, props);
-    (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_8__["default"])((0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_9__["default"])(_this), "onPullDownRefresh", function () {
-      _this.forceUpdate();
-      _this.goodsRequest();
-      _tarojs_taro__WEBPACK_IMPORTED_MODULE_0___default().stopPullDownRefresh();
-    });
-    (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_8__["default"])((0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_9__["default"])(_this), "addToShopCart", function (id, name, price, quantity) {
-      _this.setState({
-        goodsInCart: [].concat((0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_10__["default"])(_this.state.goodsInCart), [{
-          id: id,
-          name: name,
-          price: price,
-          quantity: quantity
-        }])
-      },
-      //这里写回调防止setState不同步的问题导致数据差一个
-      function () {
-        // 数据处理 传给父组件<Shop/>
-        _this.props.saveGoodsInCart(_this.state.goodsInCart);
-      });
-    });
     (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_8__["default"])((0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_9__["default"])(_this), "goodsRequest", function () {
+      // 本地测试请求
       _tarojs_taro__WEBPACK_IMPORTED_MODULE_0___default().request({
         method: 'get',
         url: 'http://localhost:3000/goodsData',
-        // data:
-        // {
-        //     "currentPage": 1,
-        //     "pageSize": 5,
-        //     "vehicleId": 1,
-        //     "queryString": "绿箭"
-        // },
-
         success: function success(res) {
           _this.setState({
             goods: (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_10__["default"])(res.data)
@@ -259,32 +245,42 @@ var GoodsList = /*#__PURE__*/function (_Component) {
           console.log(res.data);
         }
       });
+
+      // Taro.request({
+      //     method: 'POST',
+      //     url: 'http://192.168.199.238:7676/api/passenger/product/list',
+      //     data: {
+      //         "currentPage" : 0,
+      //         "pageSize" : 100,
+      //         "queryString" : null,
+      //         "vehicleId" : 1
+      //     },
+      //     success: (res) => {
+      //         this.setState({ goods: [...res.data.result] })
+      //     }
+      // })
     });
     _this.state = {
-      goods: [],
-      //存储商品
-      goodsInCart: [] //暂时存储购物车内商品
+      goods: [] //存储商品
     };
     return _this;
   }
 
   //下拉刷新
   (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_11__["default"])(GoodsList, [{
-    key: "handleRequest",
-    value:
+    key: "onPullDownRefresh",
+    value: function onPullDownRefresh() {
+      console.log(123);
+    }
+
     //处理请求的数据
-    function handleRequest(dataArr) {
+  }, {
+    key: "handleRequest",
+    value: function handleRequest(dataArr) {
       console.log(dataArr);
     }
 
-    //添加到购物车
-  }, {
-    key: "gotoDetails",
-    value:
-    // 商品详情
-    function gotoDetails(id) {
-      console.log(id);
-    }
+    //获取商品列表
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
@@ -306,16 +302,18 @@ var GoodsList = /*#__PURE__*/function (_Component) {
         className: "goods-list",
         children: [this.state.goods.map(function (good, index) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_gooditem__WEBPACK_IMPORTED_MODULE_3__["default"], {
-            imgSrc: good.imgUrl,
-            name: good.name,
+            id: good.id,
+            imgSrc: good.image //物品图片
+            ,
+            name: good.storeName //物品名
+            ,
             price: good.price,
-            surplus: good.surplus,
-            onClick: function onClick() {
-              return _this2.gotoDetails(good.id);
-            },
-            addToCart: function addToCart() {
-              return _this2.addToShopCart(good.id, good.name, good.price, 1);
-            }
+            surplus: good.surplus
+
+            // addToCart={() => this.addToShopCart(good.id,good.image,good.storeName, good.price, 1)}
+            ,
+            addToCart: _this2.props.addToCart,
+            saveItemToCart: _this2.props.saveItemToCart
           }, good.id);
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_tarojs_components__WEBPACK_IMPORTED_MODULE_12__.View, {
           style: {
@@ -363,23 +361,28 @@ var inst = Page((0,_tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__.createPageConfig
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": function() { return /* binding */ ShopCart; }
 /* harmony export */ });
-/* harmony import */ var C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
-/* harmony import */ var C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass.js */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
-/* harmony import */ var C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/inherits.js */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
-/* harmony import */ var C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createSuper.js */ "./node_modules/@babel/runtime/helpers/esm/createSuper.js");
-/* harmony import */ var C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/defineProperty.js */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
-/* harmony import */ var _tarojs_components__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @tarojs/components */ "./node_modules/@tarojs/plugin-platform-weapp/dist/components-react.js");
+/* harmony import */ var C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
+/* harmony import */ var C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass.js */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/inherits.js */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
+/* harmony import */ var C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createSuper.js */ "./node_modules/@babel/runtime/helpers/esm/createSuper.js");
+/* harmony import */ var C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/defineProperty.js */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var _tarojs_components__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @tarojs/components */ "./node_modules/@tarojs/plugin-platform-weapp/dist/components-react.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "webpack/container/remote/react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _tarojs_taro__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @tarojs/taro */ "webpack/container/remote/@tarojs/taro");
 /* harmony import */ var _tarojs_taro__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_tarojs_taro__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var taro_ui__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! taro-ui */ "webpack/container/remote/taro-ui");
 /* harmony import */ var taro_ui__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(taro_ui__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _utils_throttle__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../utils/throttle */ "./src/utils/throttle.js");
-/* harmony import */ var _images_icon_shop_cart_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../images/icon/shop-cart.png */ "./src/images/icon/shop-cart.png");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "webpack/container/remote/react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _utils_throttle__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../utils/throttle */ "./src/utils/throttle.js");
+/* harmony import */ var _shopcartlist__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shopcartlist */ "./src/pages/shop/shopcartlist/index.jsx");
+/* harmony import */ var _images_icon_shop_cart_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../images/icon/shop-cart.png */ "./src/images/icon/shop-cart.png");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "webpack/container/remote/react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
 
 
 
@@ -396,26 +399,64 @@ var inst = Page((0,_tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__.createPageConfig
 
 
 var ShopCart = /*#__PURE__*/function (_Component) {
-  (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_5__["default"])(ShopCart, _Component);
-  var _super = (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_6__["default"])(ShopCart);
+  (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_6__["default"])(ShopCart, _Component);
+  var _super = (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_7__["default"])(ShopCart);
   function ShopCart(props) {
     var _this;
-    (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_7__["default"])(this, ShopCart);
+    (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_8__["default"])(this, ShopCart);
     _this = _super.call(this, props);
-    (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_8__["default"])((0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_9__["default"])(_this), "computeTotalPrice", function (goodsList) {
-      var total = goodsList.reduce(function (pre, cur) {
-        return pre + Number(cur.price);
+    (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_9__["default"])((0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "handleDot", function (goodsList) {
+      var count = goodsList.reduce(function (total, item) {
+        return total + item.quantity;
       }, 0);
-      return total;
+      _this.setState({
+        number: count
+      });
     });
-    (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_8__["default"])((0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_9__["default"])(_this), "showCart", function () {
+    (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_9__["default"])((0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "handleGoods", function (list) {
+      // 先记录了每个id出现次数
+      var itemCount = list.reduce(function (pre, cur) {
+        pre[cur.id] = pre[cur.id] + 1 || 1;
+        return pre;
+      }, {});
+
+      //for循环写法
+      // for (let i = 0; i < list.length;i++){
+      // let item = list[i].id 
+      // newList[item] = (newList[item] + 1) || 1
+      // }
+
+      // 给数组去重
+      var hash = {};
+      var noRepeatList = list.reduce(function (item, next) {
+        hash[next.id] ? '' : (hash[next.id] = true, item.push(next));
+        return item;
+      }, []);
+
+      //重组数组
+      noRepeatList.map(function (item) {
+        item.quantity = itemCount[item.id];
+        return item;
+      });
+      return noRepeatList;
+    });
+    (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_9__["default"])((0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "computeTotalPrice", function (goodsList) {
+      var totalPrice = goodsList.reduce(function (total, item) {
+        return total + item.quantity * item.price;
+      }, 0);
+      _this.setState({
+        totalPrice: totalPrice
+      });
+      return totalPrice;
+    });
+    (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_9__["default"])((0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "showCart", function () {
       var flag = !_this.state.showCart;
       _this.setState({
         showCart: flag
       });
     });
-    (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_8__["default"])((0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_9__["default"])(_this), "throttleUpdate", (0,_utils_throttle__WEBPACK_IMPORTED_MODULE_10__.throttle)(_this.handleGoodsUpdate, 500));
-    (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_8__["default"])((0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_9__["default"])(_this), "toPay", function () {
+    (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_9__["default"])((0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "throttleUpdate", (0,_utils_throttle__WEBPACK_IMPORTED_MODULE_11__.throttle)(_this.handleGoodsUpdate, 500));
+    (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_9__["default"])((0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_10__["default"])(_this), "toPay", function () {
       _tarojs_taro__WEBPACK_IMPORTED_MODULE_1___default().setStorage({
         key: 'shopCart',
         data: {
@@ -429,6 +470,7 @@ var ShopCart = /*#__PURE__*/function (_Component) {
     _this.state = {
       number: 0,
       goods: [],
+      noRepeatGoods: [],
       totalPrice: 0,
       showCart: false
     };
@@ -436,64 +478,273 @@ var ShopCart = /*#__PURE__*/function (_Component) {
   }
 
   //更新数量 
-  (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_11__["default"])(ShopCart, [{
+  (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_12__["default"])(ShopCart, [{
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps, prevState) {
+      var _this2 = this;
       //通过判断prevProps和当前props可以避免陷入update死循环
-      if (prevProps.goodsInCart !== this.props.goodsInCart) {
+      if (prevProps.itemToCart !== this.props.itemToCart) {
         this.setState({
-          goods: this.props.goodsInCart
-        });
-        this.setState({
-          totalPrice: this.computeTotalPrice(this.props.goodsInCart)
-        });
-        this.setState({
-          number: this.props.goodsInCart.length
+          goods: [].concat((0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_13__["default"])(this.state.goods), [this.props.itemToCart])
         }, function () {
-          //回调处理
+          _this2.setState({
+            noRepeatGoods: _this2.handleGoods(_this2.state.goods)
+          }, function () {
+            _this2.computeTotalPrice(_this2.child.props.goodsList);
+          });
+          _this2.setState({
+            number: _this2.state.goods.length
+          });
         });
       }
     }
 
-    //计算总价
+    // 处理小红点显示数
   }, {
     key: "handleGoodsUpdate",
-    value: function handleGoodsUpdate(id, type) {
-      console.log(111);
-    }
+    value: function handleGoodsUpdate(id, type) {}
 
     //去结算
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_tarojs_components__WEBPACK_IMPORTED_MODULE_12__.View, {
-        className: "shop-cart",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_tarojs_components__WEBPACK_IMPORTED_MODULE_12__.View, {
-          className: "shop-cart-icon",
-          children: [this.state.number ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(taro_ui__WEBPACK_IMPORTED_MODULE_2__.AtBadge, {
-            className: "badge",
-            value: this.state.number
-          }) : null, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_tarojs_components__WEBPACK_IMPORTED_MODULE_12__.Image, {
-            onClick: this.showCart,
-            src: _images_icon_shop_cart_png__WEBPACK_IMPORTED_MODULE_3__
+      var _this3 = this;
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_tarojs_components__WEBPACK_IMPORTED_MODULE_14__.View, {
+          className: "shop-cart",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_tarojs_components__WEBPACK_IMPORTED_MODULE_14__.View, {
+            className: "shop-cart-icon",
+            children: [this.state.number ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(taro_ui__WEBPACK_IMPORTED_MODULE_2__.AtBadge, {
+              className: "badge",
+              value: this.state.number
+            }) : null, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_tarojs_components__WEBPACK_IMPORTED_MODULE_14__.Image, {
+              onClick: this.showCart,
+              src: _images_icon_shop_cart_png__WEBPACK_IMPORTED_MODULE_4__
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_tarojs_components__WEBPACK_IMPORTED_MODULE_14__.View, {
+            className: "shop-cart-total",
+            children: this.state.totalPrice
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_tarojs_components__WEBPACK_IMPORTED_MODULE_14__.View, {
+            className: "shop-cart-toPay",
+            onClick: this.toPay,
+            children: "\u53BB\u7ED3\u7B97"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_tarojs_components__WEBPACK_IMPORTED_MODULE_12__.View, {
-          className: "shop-cart-total",
-          children: this.state.totalPrice
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_tarojs_components__WEBPACK_IMPORTED_MODULE_12__.View, {
-          className: "shop-cart-toPay",
-          onClick: this.toPay,
-          children: "\u53BB\u7ED3\u7B97"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(taro_ui__WEBPACK_IMPORTED_MODULE_2__.AtFloatLayout, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(taro_ui__WEBPACK_IMPORTED_MODULE_2__.AtFloatLayout, {
           isOpened: this.state.showCart,
           scrollY: true,
           title: "\u8D2D\u7269\u8F66",
-          onClose: this.showCart
+          onClose: this.showCart,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shopcartlist__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            handleDot: this.handleDot,
+            ref: function ref(e) {
+              return _this3.child = e;
+            },
+            computeTotalPrice: this.computeTotalPrice,
+            goodsList: this.state.noRepeatGoods,
+            total: this.state.totalPrice
+          })
         })]
       });
     }
   }]);
   return ShopCart;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+
+
+/***/ }),
+
+/***/ "./src/pages/shop/shopcartitem/index.jsx":
+/*!***********************************************!*\
+  !*** ./src/pages/shop/shopcartitem/index.jsx ***!
+  \***********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ ShopCartItem; }
+/* harmony export */ });
+/* harmony import */ var C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var _tarojs_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @tarojs/components */ "./node_modules/@tarojs/plugin-platform-weapp/dist/components-react.js");
+/* harmony import */ var taro_ui__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! taro-ui */ "webpack/container/remote/taro-ui");
+/* harmony import */ var taro_ui__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(taro_ui__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "webpack/container/remote/react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "webpack/container/remote/react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+
+
+
+
+
+function ShopCartItem(props) {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(true),
+    _useState2 = (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_useState, 2),
+    isShow = _useState2[0],
+    setIsShow = _useState2[1];
+  //购物车内物品
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
+      id: props.good.id,
+      imgSrc: props.good.imgSrc,
+      name: props.good.name,
+      price: props.good.price,
+      quantity: props.good.quantity
+    }),
+    _useState4 = (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_useState3, 2),
+    item = _useState4[0],
+    setItem = _useState4[1];
+
+  //绑定数量处理方法
+  var handleQuantity = props.handleQuantity;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: isShow ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__.View, {
+      className: "shop-cart-item",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__.Image, {
+        className: "shop-cart-item-img",
+        src: item.imgSrc
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__.Text, {
+        className: "shop-cart-item-name",
+        children: item.name
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__.Text, {
+        className: "shop-cart-item-price",
+        children: ["\uFFE5", item.price]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__.View, {
+        className: "shop-cart-item-control",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(taro_ui__WEBPACK_IMPORTED_MODULE_0__.AtButton, {
+          className: "shop-cart-item-btn sub",
+          circle: true,
+          size: "small",
+          type: "secondary",
+          onClick: function onClick() {
+            handleQuantity(item.id, -1);
+          },
+          children: "-"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__.View, {
+          children: props.good.quantity
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(taro_ui__WEBPACK_IMPORTED_MODULE_0__.AtButton, {
+          className: "shop-cart-item-btn add",
+          circle: true,
+          size: "small",
+          type: "secondary",
+          onClick: function onClick() {
+            handleQuantity(item.id, 1);
+          },
+          children: "+"
+        })]
+      })]
+    }) : null
+  });
+}
+
+/***/ }),
+
+/***/ "./src/pages/shop/shopcartlist/index.jsx":
+/*!***********************************************!*\
+  !*** ./src/pages/shop/shopcartlist/index.jsx ***!
+  \***********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ ShopCartList; }
+/* harmony export */ });
+/* harmony import */ var C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
+/* harmony import */ var C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass.js */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/inherits.js */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
+/* harmony import */ var C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createSuper.js */ "./node_modules/@babel/runtime/helpers/esm/createSuper.js");
+/* harmony import */ var C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/defineProperty.js */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var _tarojs_components__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @tarojs/components */ "./node_modules/@tarojs/plugin-platform-weapp/dist/components-react.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "webpack/container/remote/react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _shopcartitem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shopcartitem */ "./src/pages/shop/shopcartitem/index.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "webpack/container/remote/react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+
+
+
+
+
+
+
+
+
+
+var ShopCartList = /*#__PURE__*/function (_Component) {
+  (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_inherits_js__WEBPACK_IMPORTED_MODULE_3__["default"])(ShopCartList, _Component);
+  var _super = (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_createSuper_js__WEBPACK_IMPORTED_MODULE_4__["default"])(ShopCartList);
+  function ShopCartList(props) {
+    var _this;
+    (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_classCallCheck_js__WEBPACK_IMPORTED_MODULE_5__["default"])(this, ShopCartList);
+    _this = _super.call(this, props);
+    (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_6__["default"])((0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "handleQuantity", function (id, step) {
+      var cloneItems = (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_8__["default"])(_this.state.items);
+      cloneItems.find(function (curr) {
+        return curr.id === id;
+      }).quantity += step;
+
+      //判断是否删除
+      _this.handleDelete(cloneItems);
+      _this.setState({
+        items: cloneItems
+      }, function () {
+        return _this.props.computeTotalPrice(_this.state.items);
+      });
+
+      //处理小红点
+      _this.props.handleDot(_this.state.items);
+    });
+    (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_defineProperty_js__WEBPACK_IMPORTED_MODULE_6__["default"])((0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_assertThisInitialized_js__WEBPACK_IMPORTED_MODULE_7__["default"])(_this), "handleDelete", function (cloneItems) {
+      cloneItems.map(function (item) {
+        if (item.quantity <= 0) {
+          //先找到其索引 然后从数组中移除
+          var index = _this.state.items.findIndex(function (one) {
+            return one.id === item.id;
+          });
+          cloneItems.splice(index, 1);
+        }
+      });
+    });
+    _this.state = {
+      items: []
+    };
+    return _this;
+  }
+
+  //拿到传入物品 渲染去重后的购物车
+  (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_9__["default"])(ShopCartList, [{
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, prevState) {
+      if (prevProps.goodsList !== this.props.goodsList) {
+        this.setState({
+          items: this.props.goodsList
+        }, function () {});
+      }
+    }
+
+    //处理某商品数量
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_tarojs_components__WEBPACK_IMPORTED_MODULE_10__.View, {
+        className: "shop-cart-list",
+        children: [this.state.items.map(function (item) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_shopcartitem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            good: item,
+            handleQuantity: _this2.handleQuantity
+          }, item.id);
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_tarojs_components__WEBPACK_IMPORTED_MODULE_10__.Text, {
+          children: ["\u603B\u4EF7:", this.props.total, "\u5143"]
+        })]
+      });
+    }
+  }]);
+  return ShopCartList;
 }(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 
 

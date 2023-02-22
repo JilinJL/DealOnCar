@@ -11,23 +11,20 @@ export default class Shop extends Component {
   constructor(props) {
     super(props)
     this.state = ({
-      goodsInCart: [],
+      itemToCart: {}
     })
   }
 
-  saveCart=(arr)=>{
-    this.setState({goodsInCart: arr})
+
+  //下拉刷新
+  onPullDownRefresh() {
+    this.forceUpdate()
+    Taro.stopPullDownRefresh()
   }
 
-  componentWillMount() { }
-
-  componentDidMount() { }
-
-  componentWillUnmount() { }
-
-  onPullDownRefresh() {
-    
-    this.forceUpdate()
+  // 拿到要加入购物车的item
+  saveItemToCart=(item)=>{
+    this.setState({itemToCart: item})
   }
 
   render() {
@@ -37,10 +34,10 @@ export default class Shop extends Component {
         <AtNoticebar marquee>
           当前设备ID: 20230221 测试版本不代表最终效果
         </AtNoticebar>
-        
-        <GoodsList saveGoodsInCart={this.saveCart} />
 
-        <ShopCart goodsInCart={this.state.goodsInCart} className='shop-cart' />
+        <GoodsList saveItemToCart={this.saveItemToCart} addToCart={this.addToCart} />
+
+        <ShopCart itemToCart={this.state.itemToCart} className='shop-cart' />
 
       </View>
     )

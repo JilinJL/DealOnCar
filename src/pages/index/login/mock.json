@@ -2,32 +2,32 @@
     "goodsData": [
       {
         "id": 1,
-        "name": "怡宝 500ml",
-        "imgUrl": "https://tse2-mm.cn.bing.net/th/id/OIP-C.dzBqXE7wng457FmMR20SuwHaHa?pid=ImgDet&rs=1",
+        "storeName": "怡宝 500ml",
+        "image": "https://tse2-mm.cn.bing.net/th/id/OIP-C.dzBqXE7wng457FmMR20SuwHaHa?pid=ImgDet&rs=1",
         "price": 2,
         "type": 1,
         "surplus": 4
       },
       {
         "id": 2,
-        "name": "绿箭口香糖 10g",
-        "imgUrl": "https://gitee.com/jilinJL/my-pictures/raw/master/img/202302211639815.png",
+        "storeName": "绿箭口香糖 10g",
+        "image": "https://gitee.com/jilinJL/my-pictures/raw/master/img/202302211639815.png",
         "price": 2,
         "type": 2,
         "surplus": 4
       },
       {
         "id": 4,
-        "name": "士力架 横扫饥饿做回自己阿巴阿巴",
-        "imgUrl": "https://gitee.com/jilinJL/my-pictures/raw/master/img/202302211634875.png",
+        "storeName": "士力架 横扫饥饿做回自己阿巴阿巴",
+        "image": "https://gitee.com/jilinJL/my-pictures/raw/master/img/202302211634875.png",
         "price": 4,
         "type": 2,
         "surplus": 4
       },
       {
         "id": 17,
-        "name": "清风湿巾纸 5片/包",
-        "imgUrl": "https://gitee.com/jilinJL/my-pictures/raw/master/img/202302211636018.png",
+        "storeName": "清风湿巾纸 5片/包",
+        "image": "https://gitee.com/jilinJL/my-pictures/raw/master/img/202302211636018.png",
         "price": 2,
         "type": 4,
         "surplus": 4
