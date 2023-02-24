@@ -20,8 +20,7 @@ export default class GoodsList extends Component {
 
     //下拉刷新
     onPullDownRefresh() {
-        console.log(123);
-        
+
     }
 
 
@@ -40,6 +39,7 @@ export default class GoodsList extends Component {
             success: (res) => {
                 this.setState({ goods: [...res.data] })
                 console.log(res.data)
+                wx.hideLoading()
             }
         })
 
@@ -62,9 +62,13 @@ export default class GoodsList extends Component {
 
     componentDidMount() {
         this.goodsRequest()
+
     }
 
-    componentDidUpdate() {
+    componentWillMount() {
+        wx.showLoading({
+            title: '加载中',
+        })
     }
 
     componentWillUnmount() {
@@ -92,7 +96,6 @@ export default class GoodsList extends Component {
                         )
                     })
                 }
-                <View style={{ position: 'relative', left: '-3rem' }}>没有更多了...</View>
             </View>
         )
     }

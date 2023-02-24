@@ -42,20 +42,19 @@ var User = /*#__PURE__*/function (_Component) {
     return _super.apply(this, arguments);
   }
   (0,C_Users_jilin_Desktop_DealOnCar_DealOnCar_node_modules_babel_runtime_helpers_esm_createClass_js__WEBPACK_IMPORTED_MODULE_7__["default"])(User, [{
-    key: "componentWillMount",
-    value: function componentWillMount() {}
+    key: "gotoHistory",
+    value: function gotoHistory() {
+      _tarojs_taro__WEBPACK_IMPORTED_MODULE_1___default().navigateTo({
+        url: '../orderlist/index'
+      });
+    }
   }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {}
-  }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {}
-  }, {
-    key: "componentDidShow",
-    value: function componentDidShow() {}
-  }, {
-    key: "componentDidHide",
-    value: function componentDidHide() {}
+    key: "gotoApply",
+    value: function gotoApply() {
+      _tarojs_taro__WEBPACK_IMPORTED_MODULE_1___default().navigateTo({
+        url: '../applytojoin/index'
+      });
+    }
   }, {
     key: "render",
     value: function render() {
@@ -64,13 +63,15 @@ var User = /*#__PURE__*/function (_Component) {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__.View, {
           className: "user-info",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(taro_ui__WEBPACK_IMPORTED_MODULE_2__.AtAvatar, {
-            children: "\u5934\u50CF"
+            className: "user-info-avatar",
+            alt: "\u7528\u6237\u5934\u50CF"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_tarojs_components__WEBPACK_IMPORTED_MODULE_8__.Text, {
             children: "\u6635\u79F0"
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(taro_ui__WEBPACK_IMPORTED_MODULE_2__.AtList, {
           className: "main-list",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(taro_ui__WEBPACK_IMPORTED_MODULE_2__.AtListItem, {
+            onClick: this.gotoHistory,
             title: "\u5386\u53F2\u8BA2\u5355",
             arrow: "right"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(taro_ui__WEBPACK_IMPORTED_MODULE_2__.AtListItem, {
@@ -80,7 +81,8 @@ var User = /*#__PURE__*/function (_Component) {
             title: "\u8054\u7CFB\u5BA2\u670D",
             arrow: "right"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(taro_ui__WEBPACK_IMPORTED_MODULE_2__.AtListItem, {
-            title: "\u7533\u8BF7\u6210\u4E3A\u53F8\u673A",
+            onClick: this.gotoApply,
+            title: "\u7533\u8BF7\u52A0\u5165",
             arrow: "right"
           })]
         })]

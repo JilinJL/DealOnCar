@@ -9,12 +9,14 @@
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Image": function() { return /* binding */ Image; },
+/* harmony export */   "Input": function() { return /* binding */ Input; },
+/* harmony export */   "Picker": function() { return /* binding */ Picker; },
 /* harmony export */   "Swiper": function() { return /* binding */ Swiper; },
 /* harmony export */   "SwiperItem": function() { return /* binding */ SwiperItem; },
 /* harmony export */   "Text": function() { return /* binding */ Text; },
 /* harmony export */   "View": function() { return /* binding */ View; }
 /* harmony export */ });
-/* unused harmony exports Ad, AdCustom, Audio, Block, Button, Camera, Canvas, ChannelLive, Checkbox, CheckboxGroup, CoverImage, CoverView, CustomWrapper, Editor, Form, FunctionalPageNavigator, Icon, Input, KeyboardAccessory, Label, LivePlayer, LivePusher, Map, MatchMedia, MovableArea, MovableView, NativeSlot, NavigationBar, Navigator, OfficialAccount, OpenData, PageContainer, PageMeta, Picker, PickerView, PickerViewColumn, Progress, Radio, RadioGroup, RichText, RootPortal, ScrollView, ShareElement, Slider, Slot, Switch, Textarea, Video, VoipRoom, WebView */
+/* unused harmony exports Ad, AdCustom, Audio, Block, Button, Camera, Canvas, ChannelLive, Checkbox, CheckboxGroup, CoverImage, CoverView, CustomWrapper, Editor, Form, FunctionalPageNavigator, Icon, KeyboardAccessory, Label, LivePlayer, LivePusher, Map, MatchMedia, MovableArea, MovableView, NativeSlot, NavigationBar, Navigator, OfficialAccount, OpenData, PageContainer, PageMeta, PickerView, PickerViewColumn, Progress, Radio, RadioGroup, RichText, RootPortal, ScrollView, ShareElement, Slider, Slot, Switch, Textarea, Video, VoipRoom, WebView */
 var View = 'view';
 var Icon = 'icon';
 var Progress = 'progress';

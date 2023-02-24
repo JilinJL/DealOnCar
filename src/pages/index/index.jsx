@@ -21,11 +21,6 @@ export default class Index extends Component {
     // showLogin();
    }
 
-  componentWillUnmount() { }
-
-  componentDidShow() { }
-
-  componentDidHide() { }
 
   //登陆
 

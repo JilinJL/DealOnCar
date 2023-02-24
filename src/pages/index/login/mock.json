@@ -31,6 +31,30 @@
         "price": 2,
         "type": 4,
         "surplus": 4
+      },
+      {
+        "id": 3,
+        "storeName": "N95口罩 5片/袋",
+        "image": "https://img10.360buyimg.com/n1/jfs/t1/159183/20/3409/98441/60013edbEc16938d9/a56aaa9233601a8c.jpg",
+        "price": 2,
+        "type": 4,
+        "surplus": 10
+      },
+      {
+        "id": 5,
+        "storeName": "防风打火机",
+        "image": "https://cbu01.alicdn.com/img/ibank/2019/181/383/12038383181_1305095628.jpg",
+        "price": 2,
+        "type": 4,
+        "surplus": 7
+      },
+      {
+        "id": 7,
+        "storeName": "心相印卫生纸",
+        "image": "https://img.zcool.cn/community/019c4c55d084d56ac725baa0457a46.jpg@1280w_1l_2o_100sh.jpg",
+        "price": 1,
+        "type": 4,
+        "surplus": 12
       }
     ]
   }

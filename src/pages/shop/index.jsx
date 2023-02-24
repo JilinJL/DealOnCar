@@ -39,6 +39,8 @@ export default class Shop extends Component {
 
         <ShopCart itemToCart={this.state.itemToCart} className='shop-cart' />
 
+        <View>加载...</View>
+
       </View>
     )
   }

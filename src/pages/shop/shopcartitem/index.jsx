@@ -6,9 +6,9 @@ import './index.less'
 export default function ShopCartItem(props) {
 
 
-  const [isShow,setIsShow] = useState(true)
+  const [isShow, setIsShow] = useState(true)
   //购物车内物品
-  const [item,setItem] = useState({
+  const [item, setItem] = useState({
     id: props.good.id,
     imgSrc: props.good.imgSrc,
     name: props.good.name,
@@ -21,33 +21,35 @@ export default function ShopCartItem(props) {
 
   return (
     <>
-    {
-      isShow?    
-      (<View className="shop-cart-item">
-      <Image className="shop-cart-item-img" src={item.imgSrc}/>
-      <Text className="shop-cart-item-name">{item.name}</Text>
-      <Text className="shop-cart-item-price">￥{item.price}</Text>
-      <View className="shop-cart-item-control">
-        <AtButton
-          className="shop-cart-item-btn sub"
-          circle
-          size='small'
-          type='secondary'
-          onClick={()=>{handleQuantity(item.id,-1)}}
-        >-</AtButton>
-        <View>{props.good.quantity}</View>
-        <AtButton
-          className="shop-cart-item-btn add"
-          circle
-          size='small'
-          type='secondary'
-          onClick={()=>{handleQuantity(item.id,1)}}
-        >+</AtButton>
-      </View>
-    </View>)
-    :
-    null
-    }
+      {
+        isShow ?
+          (<View className="shop-cart-item">
+            <Image className="shop-cart-item-img" src={item.imgSrc} />
+            <Text className="shop-cart-item-name">{item.name}</Text>
+            <Text className="shop-cart-item-price">￥{item.price}</Text>
+
+
+            <View className="shop-cart-item-control">
+              <AtButton
+                className="shop-cart-item-btn sub"
+                circle
+                size='small'
+                type='secondary'
+                onClick={() => { handleQuantity(item.id, -1) }}
+              >-</AtButton>
+              <View>{props.good.quantity}</View>
+              <AtButton
+                className="shop-cart-item-btn add"
+                circle
+                size='small'
+                type='secondary'
+                onClick={() => { handleQuantity(item.id, 1) }}
+              >+</AtButton>
+            </View>
+          </View>)
+          :
+          null
+      }
 
     </>
 

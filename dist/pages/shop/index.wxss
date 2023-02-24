@@ -56,63 +56,6 @@
 }
 
 /*!*****************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].oneOf[0].use[2]!./node_modules/less-loader/dist/cjs.js!./src/pages/shop/shopcartitem/index.less ***!
-  \*****************************************************************************************************************************************************************************************************************************************************/
-.shop-cart-item {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content;
-  width: 100%;
-  -webkit-box-shadow: 2rpx 1rpx 7rpx #666;
-          box-shadow: 2rpx 1rpx 7rpx #666;
-  background-color: #cccbcbcc;
-  margin-top: 10rpx;
-  border: 1rpx solid #a39f9f;
-  border-radius: 10rpx;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.shop-cart-item .shop-cart-item-img {
-  height: 80rpx;
-  width: 80rpx;
-}
-.shop-cart-item .shop-cart-item-name {
-  width: 200rpx;
-  white-space: nowrap;
-  overflow: hidden;
-  -o-text-overflow: ellipsis;
-     text-overflow: ellipsis;
-}
-.shop-cart-item .shop-cart-item-name:hover {
-  overflow: visible;
-  white-space: normal;
-  -o-text-overflow: clip;
-     text-overflow: clip;
-}
-.shop-cart-item .shop-cart-item-control {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.shop-cart-item .shop-cart-item-control .shop-cart-item-btn {
-  margin: 0 10rpx 0 10rpx;
-  zoom: 0.7;
-  font-size: 1.5rem;
-}
-
-/*!*****************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].oneOf[0].use[2]!./node_modules/less-loader/dist/cjs.js!./src/pages/shop/shopcartlist/index.less ***!
   \*****************************************************************************************************************************************************************************************************************************************************/
 

@@ -1,7 +1,7 @@
 import { View, Image, Text } from '@tarojs/components'
 import React, { Component } from 'react'
 import Taro from '@tarojs/taro'
-import { AtBadge, AtFloatLayout } from 'taro-ui'
+import { AtBadge, AtFloatLayout,AtMessage } from 'taro-ui'
 import { throttle } from '../../../utils/throttle'
 import ShopCartList from '../shopcartlist'
 import img from '../../../images/icon/shop-cart.png'
@@ -71,12 +71,31 @@ export default class ShopCart extends Component {
         return noRepeatList
     }
 
-    //计算总价
+
+    //计算总价  储存订单信息
     computeTotalPrice = (goodsList) => {
         let totalPrice = goodsList.reduce((total, item) => {
             return total + item.quantity * item.price
         }, 0)
         this.setState({ totalPrice: totalPrice })
+
+        // 储存购物车
+        Taro.setStorage({
+            key: 'cart',
+            data: {
+                goodsList,
+                totalPrice: goodsList.reduce((total, item) => {
+                    return total + item.quantity * item.price
+                }, 0)
+            },
+            success: ()=>{
+                Taro.atMessage({
+                    'message': '添加成功',
+                    'type': 'success',
+                    'duration': 500
+                  })
+            }
+        })
         return totalPrice;
     }
 
@@ -96,19 +115,15 @@ export default class ShopCart extends Component {
 
     //去结算
     toPay = () => {
-        Taro.setStorage({
-            key: 'shopCart',
-            data: {
-                total: this.state.totalPrice
-            }
-        })
+        //判断是否登录
         Taro.navigateTo({
-            url: '../pay/index?totalPrice=123'
+            url: '../pay/index'
         })
     }
     render() {
         return (
             <>
+            <AtMessage/>
                 <View className="shop-cart">
                     <View className="shop-cart-icon">
                         {this.state.number ? <AtBadge className="badge" value={this.state.number} />

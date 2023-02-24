@@ -1,0 +1,52 @@
+page {
+  background-image: url('https://gitee.com/jilinJL/my-pictures/raw/3e1c737e3ca3b4065214c9dcfb767df5227213bd/img/202302241642099.png');
+}
+page .index {
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+page .index .user-apply {
+  margin: 60rpx;
+  padding: 40rpx;
+  border: 3rpx solid #666;
+  box-shadow: -3rpx 3rpx 10rpx #000;
+  background-color: #6cc1c4;
+}
+page .index .user-apply .user-apply-title {
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 5rpx;
+  font-style: italic;
+  border-bottom: 3rpx solid #666;
+}
+page .index .user-apply .user-apply-timeline {
+  margin-top: 60rpx;
+}
+page .index .user-info-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30rpx;
+  align-items: center;
+}
+page .index .user-info-form .input {
+  width: 400rpx;
+  height: 1.2rem;
+  border-radius: 30rpx;
+  box-shadow: -2rpx 2rpx 17rpx #666;
+  padding: 0.5rem;
+}
+page .index .user-info-form .born-picker .picker {
+  width: 400rpx;
+  height: 1.2rem;
+  border-radius: 30rpx;
+  box-shadow: -2rpx 2rpx 17rpx #666;
+  padding: 0.5rem;
+}
+page .index .user-info-form .user-info-submit {
+  width: 160rpx;
+  border-radius: 60rpx;
+  box-shadow: -2rpx 2rpx 10rpx #666;
+}

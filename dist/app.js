@@ -13,6 +13,7 @@ require("./prebundle/node_modules_taro_weapp_prebundle_react_jsx-runtime_js.js")
 require("./prebundle/node_modules_taro_weapp_prebundle_react_js.js");
 require("./prebundle/node_modules_taro_weapp_prebundle_tarojs_taro_js.js");
 
+require("./common");
 require("./vendors");
 require("./taro");
 require("./runtime");
@@ -98,7 +99,7 @@ var App = /*#__PURE__*/function (_Component) {
 
 
 
-var config = {"pages":["pages/shop/index","pages/index/index","pages/user/index","pages/pay/index","pages/orderlist/index"],"window":{"backgroundTextStyle":"light","backgroundColor":"#ddd","navigationBarBackgroundColor":"#fff","navigationBarTitleText":"随车买","navigationBarTextStyle":"black","enablePullDownRefresh":true},"tabBar":{"color":"#666","list":[{"pagePath":"pages/index/index","text":"首页","iconPath":"./images/icon/home_.png","selectedIconPath":"./images/icon/home.png"},{"pagePath":"pages/shop/index","text":"购物","iconPath":"./images/icon/shop.png","selectedIconPath":"./images/icon/shop-fill.png"},{"pagePath":"pages/user/index","text":"我的","iconPath":"./images/icon/user_1.png","selectedIconPath":"./images/icon/user.png"}]}};
+var config = {"pages":["pages/user/index","pages/shop/index","pages/index/index","pages/pay/index","pages/orderlist/index","pages/applytojoin/index"],"window":{"backgroundTextStyle":"light","backgroundColor":"#ddd","navigationBarBackgroundColor":"#fff","navigationBarTitleText":"随车买","navigationBarTextStyle":"black","enablePullDownRefresh":true},"tabBar":{"color":"#666","list":[{"pagePath":"pages/index/index","text":"首页","iconPath":"./images/icon/home_.png","selectedIconPath":"./images/icon/home.png"},{"pagePath":"pages/shop/index","text":"购物","iconPath":"./images/icon/shop.png","selectedIconPath":"./images/icon/shop-fill.png"},{"pagePath":"pages/user/index","text":"我的","iconPath":"./images/icon/user_1.png","selectedIconPath":"./images/icon/user.png"}]}};
 _tarojs_runtime__WEBPACK_IMPORTED_MODULE_1__.window.__taroAppConfig = config
 var inst = App((0,_tarojs_plugin_framework_react_dist_runtime__WEBPACK_IMPORTED_MODULE_2__.createReactApp)(_node_modules_babel_loader_lib_index_js_ruleSet_1_rules_5_use_0_app_js__WEBPACK_IMPORTED_MODULE_4__["default"], react__WEBPACK_IMPORTED_MODULE_5__, (react_dom__WEBPACK_IMPORTED_MODULE_6___default()), config))
 

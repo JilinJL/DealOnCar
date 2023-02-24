@@ -1,0 +1,18 @@
+.index .shopcart .shop-cart-item-btn {
+  display: none;
+}
+.index .payBtn {
+  position: absolute;
+  bottom: 0;
+  margin: 0 20rpx 20rpx 0;
+  display: flex;
+  right: 10rpx;
+  background-color: #5490c9;
+  height: 10vh;
+  width: 15vh;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40rpx;
+  color: #fff;
+  letter-spacing: 2rpx;
+}

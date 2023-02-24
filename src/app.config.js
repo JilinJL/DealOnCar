@@ -1,10 +1,11 @@
 export default defineAppConfig({
   pages: [
+    'pages/user/index',
     'pages/shop/index',
     'pages/index/index',
-    'pages/user/index',
     'pages/pay/index',
-    'pages/orderlist/index'
+    'pages/orderlist/index',
+    'pages/applytojoin/index',
   ],
   window: {
     backgroundTextStyle: 'light',
@@ -12,7 +13,7 @@ export default defineAppConfig({
     navigationBarBackgroundColor: '#fff',
     navigationBarTitleText: '随车买',
     navigationBarTextStyle: 'black',
-    enablePullDownRefresh: true
+    enablePullDownRefresh: true,
   },
   tabBar:{
     "color": "#666",

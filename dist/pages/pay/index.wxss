@@ -1,0 +1,28 @@
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].oneOf[0].use[2]!./node_modules/less-loader/dist/cjs.js!./src/pages/pay/index.less ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+.index .shopcart .shop-cart-item-btn {
+  display: none;
+}
+.index .payBtn {
+  position: absolute;
+  bottom: 0;
+  margin: 0 20rpx 20rpx 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  right: 10rpx;
+  background-color: #5490c9;
+  height: 10vh;
+  width: 15vh;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 40rpx;
+  color: #fff;
+  letter-spacing: 2rpx;
+}
+

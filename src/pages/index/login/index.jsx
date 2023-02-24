@@ -1,11 +1,31 @@
-import React from 'react'
+import {React,useState} from 'react'
 import Taro from '@tarojs/taro'
 import { Image, View, Text } from '@tarojs/components'
 
 
 
 export default function Login(props) {
+
+  const [userData,setUserData] = useState({
+    userInfo: {},
+    hasUserInfo: false
+  })
+
   const login = () => {
+
+    wx.getUserProfile({
+      desc: '用于小程序登陆',
+      success: (res) => {
+        setUserData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    })
+
     Taro.login({
       success: function(res){
         wx.showLoading({
@@ -20,7 +40,8 @@ export default function Login(props) {
             success: function(res){
               wx.hideLoading()
               props.setIsLogin(true)
-              console.log(res.openid)
+              // 将用户数据存入storage
+
             },
             fail: function(err){
               Taro.showToast({
